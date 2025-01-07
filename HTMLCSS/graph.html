@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Graph Example</title>
+    <script>
+        function fetchGraph() {
+            document.getElementById("graphImage").src = "/chart/bar?" + new Date().getTime();
+        }
+    </script>
+</head>
+<body>
+    <h1>Graph Example</h1>
+    <button onclick="fetchGraph()">Generate Graph</button>
+    <br><br>
+    <img id="graphImage" alt="Graph will be displayed here" />
+</body>
+</html>

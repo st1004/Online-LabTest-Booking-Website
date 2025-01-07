@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #BDF6FE;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+            margin: 20px 0;
+            padding-left: 580px;
+        }
+        .faq-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        .faq {
+            margin-bottom: 20px;
+        }
+        .faq h2 {
+            font-size: 18px;
+            color: #007BFF;
+            cursor: pointer;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        .faq p {
+            font-size: 16px;
+            color: #555;
+            display: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+        }
+        .faq h2:hover {
+            color: #0056b3;
+        }
+        .faq.active p {
+            display: block;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <img src="/images/icon.png" width="45px">
+    <p class="navbar-brand text-white">SSG Diagnostics</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="about_us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="contact_us">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="faq">FAQ's</a>
+        </li>
+      </ul>
+      <div>
+        <a class="nav-link text-white" href="user_register">User Registration</a>
+        <a class="nav-link text-white" href="sign_in">Sign In</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<br><br>
+<h1><b><u>FAQ's</u></b></h1>
+<div class="faq-container">
+    <div class="faq">
+        <h2>What services do you offer?</h2>
+        <p>We offer a wide range of lab tests including blood tests, urinalysis, cholesterol tests, thyroid function tests, liver function tests, ECGs and diabetes tests.</p>
+    </div><br>
+    <div class="faq">
+        <h2>How do I book a lab test?</h2>
+        <p>You can easily book a lab test through our website. Simply browse through the available tests, select the one you need, and follow the prompts to schedule an appointment at your preferred clinic.</p>
+    </div><br>
+    <div class="faq">
+        <h2>How do I view my test results?</h2>
+        <p>After your test is completed, you will receive a notification via email. You can also log in to your account on our website to view your test results.</p>
+    </div><br>
+    <div class="faq">
+        <h2>Are my personal and medical details secure on your platform?</h2>
+        <p>Yes, we take your privacy and security very seriously. All personal and medical information is stored securely and handled in accordance with our privacy policy.</p>
+    </div><br>
+    <div class="faq">
+        <h2>What payment methods do you accept?</h2>
+        <p>We accept various payment methods including credit/debit cards and UPI. You can choose your preferred payment option at the time of booking.</p>
+    </div><br>
+    <div class="faq">
+        <h2>How do I contact customer support?</h2>
+        <p>If you need assistance, you can reach out to our customer support team via the "Contact Us" page on our website. We are here to help you with any questions or concerns.</p>
+    </div>
+</div>
+<br><br><br>
+<footer class="footer mt-auto py-3 bg-dark text-white">
+  <div class="container">
+    <p>&copy; Copyright 2024 SSG Diagnostic Centre Limited. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="privacy_policy" class="text-white">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.faq h2').forEach(faqHeader => {
+        faqHeader.addEventListener('click', () => {
+            const faq = faqHeader.parentElement;
+            faq.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

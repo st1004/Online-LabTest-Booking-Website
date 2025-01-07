@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<title>Choose a Clinic</title>
+<style>
+    body {
+        background-color: #BDF6FE;
+    }
+    .options-container {
+        display: flex;
+        flex-direction: column; /* Arrange heading and buttons container in a column */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        height: 85vh;
+    }
+    .buttons-container {
+        display: flex;
+        flex-direction: row; /* Arrange buttons in a row */
+        justify-content: center; /* Center buttons horizontally */
+        align-items: center; /* Center buttons vertically */
+    }
+    .option-box {
+        width: 320px; /* slightly bigger */
+        height: 100px; /* slightly taller */
+        margin: 15px;
+        padding: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: 2px solid black; /* black border */
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Center text horizontally */
+        align-items: center; /* Center text vertically */
+    }
+    .option-box:hover {
+        background-color: #0056b3;
+    }
+    .option {
+        font-size: 27.5px;
+        margin: 0;
+        line-height: 55px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <div class="container-fluid">
+    <img src="/images/icon.png" width="45px"><p class="navbar-brand text-white">SSG Diagnostics</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="about_us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="contact_us">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="faq">FAQ's</a>
+        </li>
+      </ul>
+      <div> 
+        <a class="nav-link text-white" href="user_register">User Registration</a>
+        <a class="nav-link text-white" href="sign_in">Sign In</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="options-container">
+  <h1>Select your Preferred Clinic:</h1><br><br>
+  <div class="buttons-container">
+    <!-- Iterate over the buttonOptions list to generate buttons -->
+    <div th:each="option : ${buttonOptions}">
+      <form th:action="@{/handleLabSelection}" method="post">
+        <input type="hidden" name="buttonLabel" th:value="${option}">
+        <button class="option-box" type="submit" th:text="${option}"></button>
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="footer mt-auto py-3 bg-dark text-white">
+  <div class="container">
+    <p>&copy; Copyright 2024 SSG Diagnostic Centre Limited. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="privacy_policy">Privacy Policy</a></p>
+  </div>
+</footer>
+</body>
+</html>
